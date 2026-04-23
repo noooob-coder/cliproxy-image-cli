@@ -1,0 +1,44 @@
+{
+  "name": "cliproxy-image-cli",
+  "version": "0.2.8",
+  "description": "Codex-native CLI for generating and editing images through the local Codex OpenAI configuration.",
+  "bin": {
+    "cliproxy-image-cli": "bin/cliproxy-image-cli.js"
+  },
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "README.md",
+    "README.en.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node -e \"const { execFileSync } = require('node:child_process'); const checks = [['bin/cliproxy-image-cli.js', '--help'], ['bin/cliproxy-image-cli.js', 'generate', '--help'], ['bin/cliproxy-image-cli.js', 'edit', '--help']]; for (const args of checks) execFileSync(process.execPath, args, { stdio: 'ignore' });\"",
+    "check": "npm run test",
+    "prepublishOnly": "npm run check"
+  },
+  "keywords": [
+    "cli",
+    "cliproxyapi",
+    "image-generation",
+    "image-editing",
+    "openai-compatible"
+  ],
+  "author": "silarty666@gmail.com",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/noooob-coder/cliproxy-image-cli#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noooob-coder/cliproxy-image-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/noooob-coder/cliproxy-image-cli/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

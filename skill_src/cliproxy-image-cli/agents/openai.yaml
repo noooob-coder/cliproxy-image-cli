@@ -1,0 +1,7 @@
+﻿interface:
+  display_name: "Codex Image CLI"
+  short_description: "Generate or edit local image files, including generic requests like 画一张风景图"
+  default_prompt: "Use $cliproxy-image-cli to run the installable cliproxy-image-cli command with the local Codex OpenAI configuration and save the image result to disk. Treat generic requests such as 画一张风景图, 生成一张海报, or 构建一副插画 as valid triggers for this skill even when the user did not mention the CLI or an output path. If no output path is given, save into the current Codex working directory with a non-overwriting default filename. If the user does not specify a size, follow imagegen's size policy and choose size in this order: explicit user size first; otherwise infer 1536x1024 for obviously wide outputs like 横图、banner、hero、壁纸、全景; infer 1024x1536 for obviously tall outputs like 海报、竖版、手机壁纸、poster、book cover; otherwise use 1024x1024; choose auto only when the user explicitly asks for auto or adaptive/original ratio. Before invoking the CLI, keep the user's prompt as-is when it is already explicit and concrete; otherwise rewrite it into a more image-ready prompt for gpt-image-2, then pass that rewritten prompt to the CLI."
+
+policy:
+  allow_implicit_invocation: true
