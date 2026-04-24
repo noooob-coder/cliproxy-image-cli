@@ -31,19 +31,65 @@
   - `/v1/images/*`
   - 基于 `/v1/responses` 的图片生成 / 编辑链路
 
-## 安装方式
+## 使用方式
 
-### npm
+### 1. 安装 CLI
+
+#### npm
 
 ```bash
 npm install -g cliproxy-image-cli
 ```
 
-### Homebrew
+#### Homebrew
 
 ```bash
 brew tap noooob-coder/tap
 brew install cliproxy-image-cli
+```
+
+### 2. 安装 Codex skill
+
+把仓库中的 `skill_src/cliproxy-image-cli` 复制到本机 Codex skill 目录即可。
+
+#### macOS / Linux
+
+```bash
+mkdir -p ~/.codex/skills
+cp -R ./skill_src/cliproxy-image-cli ~/.codex/skills/cliproxy-image-cli
+```
+
+#### Windows PowerShell
+
+```powershell
+New-Item -ItemType Directory -Force "$HOME\.codex\skills" | Out-Null
+Copy-Item -Recurse -Force .\skill_src\cliproxy-image-cli "$HOME\.codex\skills\cliproxy-image-cli"
+```
+
+安装完成后，Codex 就可以直接加载这个 skill。
+
+### 3. 在 Codex 中如何调用
+
+安装好 skill 后，可以在 Codex 里直接输入自然语言调用，例如：
+
+```text
+请使用 cliproxy-image-cli skill 生成一张电影感橘猫宇航员海报，保存到当前目录
+```
+
+也可以显式写成：
+
+```text
+$cliproxy-image-cli 画一张雪山下的科幻小屋，保存为当前目录中的图片文件
+```
+
+如果你已经安装了这个 skill，很多普通图片请求也可以直接触发，例如：
+
+```text
+画一张日出水彩风景图
+```
+
+```text
+把这张图片的背景换成雪山，输出到当前工作目录
 ```
 
 ## 项目结构
@@ -275,3 +321,7 @@ Action: point Codex at an OpenAI-compatible provider that implements the image e
 - **商用与出售**：必须事先获得作者单独书面授权，并支付商业许可费用
 
 完整条款见 [`LICENSE`](./LICENSE)。
+
+## 致谢
+
+- 感谢 [LinuxDo](https://linux.do/) 社区的交流、分享与反馈。

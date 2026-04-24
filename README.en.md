@@ -31,19 +31,65 @@ Installable Codex-native CLI for image generation and image editing by reusing y
   - `/v1/images/*`
   - image generation or editing through `/v1/responses`
 
-## Installation
+## Usage
 
-### npm
+### 1. Install the CLI
+
+#### npm
 
 ```bash
 npm install -g cliproxy-image-cli
 ```
 
-### Homebrew
+#### Homebrew
 
 ```bash
 brew tap noooob-coder/tap
 brew install cliproxy-image-cli
+```
+
+### 2. Install the Codex skill
+
+Copy `skill_src/cliproxy-image-cli` into your local Codex skills directory.
+
+#### macOS / Linux
+
+```bash
+mkdir -p ~/.codex/skills
+cp -R ./skill_src/cliproxy-image-cli ~/.codex/skills/cliproxy-image-cli
+```
+
+#### Windows PowerShell
+
+```powershell
+New-Item -ItemType Directory -Force "$HOME\.codex\skills" | Out-Null
+Copy-Item -Recurse -Force .\skill_src\cliproxy-image-cli "$HOME\.codex\skills\cliproxy-image-cli"
+```
+
+After that, Codex can load the skill directly.
+
+### 3. What to type in Codex
+
+Once the skill is installed, you can call it in Codex with plain language, for example:
+
+```text
+Please use the cliproxy-image-cli skill to generate a cinematic astronaut orange cat poster and save it in the current directory.
+```
+
+You can also invoke it explicitly like this:
+
+```text
+$cliproxy-image-cli Create a sci-fi cabin under snowy mountains and save it as an image file in the current directory.
+```
+
+With the skill installed, many normal image requests can also trigger it directly, for example:
+
+```text
+Paint a watercolor sunrise landscape.
+```
+
+```text
+Replace the background of this image with snowy mountains and save it to the current working directory.
 ```
 
 ## Project structure
